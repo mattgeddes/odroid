@@ -1,0 +1,7 @@
+---
+- name: Odroid nodes
+  hosts: odroid
+  vars:
+    odroid_led_trigger: mmc0
+  roles:
+    - odroid_common

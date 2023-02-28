@@ -1,0 +1,5 @@
+---
+# Default to the LED indicating MMC activity.
+odroid_led_trigger: sd
+# Default path. Should be fine on most modern kernels.
+odroid_led_path: "/sys/class/leds/blue:heartbeat/trigger"

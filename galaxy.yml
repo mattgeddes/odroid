@@ -1,0 +1,16 @@
+namespace: mattgeddes
+name: odroid
+version: 0.0.7
+readme: README.md
+authors:
+- Matthew Geddes <musicalcarrion@gmail.com>
+description: A collection of Ansible roles for managing Hardkernel Odroid SBCs
+license:
+- Apache-2.0
+license_file: ''
+tags: ["odroid","hardkernel","linux"]
+dependencies: {}
+repository: https://github.com/mattgeddes/odroid
+issues: https://github.com/mattgeddes/odroid
+build_ignore: []
+

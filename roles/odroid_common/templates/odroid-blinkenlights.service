@@ -1,0 +1,12 @@
+[Unit]
+Description=Odroid LED Blinkenlights
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo {{ odroid_led_trigger }} > {{ odroid_led_path }}"
+ExecStop=/bin/sh -c "echo none > {{ odroid_led_path }}"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,29 @@
+---
+- name: LED path check
+  ansible.builtin.stat:
+    path: "{{ odroid_led_path }}"
+  register: led_path
+
+- name: Odroid Blinkenlights
+
+  block:
+    - name: Configure Odroid Cloudshell Blinkenlights controls
+      ansible.builtin.template:
+        src: ./templates/odroid-blinkenlights.service
+        dest: /etc/systemd/system/odroid-blinkenlights.service
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Systemd service reload
+      ansible.builtin.systemd:
+        daemon_reload: true
+
+    - name: Blinkenlights systemd unit
+      ansible.builtin.systemd:
+        name: odroid-blinkenlights
+        enabled: true
+        state: started
+
+  become: true
+  when: led_path.stat.exists

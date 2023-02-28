@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Matthew Geddes
+  description: Common Hardkernel Odroid Configuration
+  company:
+  license: Apache-2.0
+  min_ansible_version: 2.7
+  # Will likely work on any systemd-enabled platform, but only tested on Debian
+  # and Ubuntu at the moment.
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags: ["odroid", "hardkernel", "linux"]
+dependencies: []
